@@ -1,0 +1,7 @@
+Bundle-SymbolicName: apmservices-api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.sky.skyseries.apm.exception,\
+	com.sky.skyseries.apm.model,\
+	com.sky.skyseries.apm.service,\
+	com.sky.skyseries.apm.service.persistence
