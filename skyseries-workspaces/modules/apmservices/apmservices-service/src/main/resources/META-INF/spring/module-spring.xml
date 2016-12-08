@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean class="com.sky.skyseries.apm.service.impl.BuildingLocalServiceImpl" id="com.sky.skyseries.apm.service.BuildingLocalService" />
+	<bean class="com.sky.skyseries.apm.service.impl.BuildingServiceImpl" id="com.sky.skyseries.apm.service.BuildingService" />
+	<bean class="com.sky.skyseries.apm.service.persistence.impl.BuildingPersistenceImpl" id="com.sky.skyseries.apm.service.persistence.BuildingPersistence" parent="basePersistence" />
+	<bean class="com.sky.skyseries.apm.service.impl.FloorLocalServiceImpl" id="com.sky.skyseries.apm.service.FloorLocalService" />
+	<bean class="com.sky.skyseries.apm.service.impl.FloorServiceImpl" id="com.sky.skyseries.apm.service.FloorService" />
+	<bean class="com.sky.skyseries.apm.service.persistence.impl.FloorPersistenceImpl" id="com.sky.skyseries.apm.service.persistence.FloorPersistence" parent="basePersistence" />
+	<bean class="com.sky.skyseries.apm.service.impl.LegalEntityLocalServiceImpl" id="com.sky.skyseries.apm.service.LegalEntityLocalService" />
+	<bean class="com.sky.skyseries.apm.service.impl.LegalEntityServiceImpl" id="com.sky.skyseries.apm.service.LegalEntityService" />
+	<bean class="com.sky.skyseries.apm.service.persistence.impl.LegalEntityPersistenceImpl" id="com.sky.skyseries.apm.service.persistence.LegalEntityPersistence" parent="basePersistence" />
+	<bean class="com.sky.skyseries.apm.service.impl.RoomLocalServiceImpl" id="com.sky.skyseries.apm.service.RoomLocalService" />
+	<bean class="com.sky.skyseries.apm.service.impl.RoomServiceImpl" id="com.sky.skyseries.apm.service.RoomService" />
+	<bean class="com.sky.skyseries.apm.service.persistence.impl.RoomPersistenceImpl" id="com.sky.skyseries.apm.service.persistence.RoomPersistence" parent="basePersistence" />
+	<bean class="com.sky.skyseries.apm.service.impl.RoomRateLocalServiceImpl" id="com.sky.skyseries.apm.service.RoomRateLocalService" />
+	<bean class="com.sky.skyseries.apm.service.impl.RoomRateServiceImpl" id="com.sky.skyseries.apm.service.RoomRateService" />
+	<bean class="com.sky.skyseries.apm.service.impl.RoomStatusLocalServiceImpl" id="com.sky.skyseries.apm.service.RoomStatusLocalService" />
+	<bean class="com.sky.skyseries.apm.service.impl.RoomStatusServiceImpl" id="com.sky.skyseries.apm.service.RoomStatusService" />
+	<bean class="com.sky.skyseries.apm.service.persistence.impl.RoomStatusPersistenceImpl" id="com.sky.skyseries.apm.service.persistence.RoomStatusPersistence" parent="basePersistence" />
+	<bean class="com.sky.skyseries.apm.service.impl.RoomTypeLocalServiceImpl" id="com.sky.skyseries.apm.service.RoomTypeLocalService" />
+	<bean class="com.sky.skyseries.apm.service.impl.RoomTypeServiceImpl" id="com.sky.skyseries.apm.service.RoomTypeService" />
+	<bean class="com.sky.skyseries.apm.service.persistence.impl.RoomTypePersistenceImpl" id="com.sky.skyseries.apm.service.persistence.RoomTypePersistence" parent="basePersistence" />
+</beans>

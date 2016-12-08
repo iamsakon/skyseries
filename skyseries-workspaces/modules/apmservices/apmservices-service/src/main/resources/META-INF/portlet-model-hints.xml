@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.sky.skyseries.apm.model.Building">
+		<field name="uuid" type="String" />
+		<field name="buildingId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="name2" type="String" />
+		<field name="legalEntityId" type="long" />
+	</model>
+	<model name="com.sky.skyseries.apm.model.Floor">
+		<field name="uuid" type="String" />
+		<field name="floorId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="buildingId" type="long" />
+	</model>
+	<model name="com.sky.skyseries.apm.model.LegalEntity">
+		<field name="uuid" type="String" />
+		<field name="legalEntityId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+	</model>
+	<model name="com.sky.skyseries.apm.model.Room">
+		<field name="uuid" type="String" />
+		<field name="roomId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="floorId" type="long" />
+		<field name="roomStatusId" type="long" />
+		<field name="roomTypeId" type="long" />
+	</model>
+	<model name="com.sky.skyseries.apm.model.RoomStatus">
+		<field name="uuid" type="String" />
+		<field name="roomStatusId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="code" type="String" />
+		<field name="name" type="String" />
+	</model>
+	<model name="com.sky.skyseries.apm.model.RoomType">
+		<field name="uuid" type="String" />
+		<field name="roomTypeId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="description" type="String" />
+	</model>
+</model-hints>

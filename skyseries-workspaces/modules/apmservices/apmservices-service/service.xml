@@ -2,49 +2,148 @@
 <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.0.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_0_0.dtd">
 
 <service-builder package-path="com.sky.skyseries.apm">
-	<namespace>FOO</namespace>
-	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
-	<entity local-service="true" name="Foo" remote-service="true" uuid="true">
-
-		<!-- PK fields -->
-
-		<column name="fooId" primary="true" type="long" />
-
+	<namespace>apm</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" 
+		remote-service="false" session-factory="sampleSessionFactory" table="foo" 
+		tx-manager="sampleTransactionManager uuid="true""> -->
+    <entity name="LegalEntity" local-service="true" remote-service="true"
+    	uuid="true" table="legal_entity">
+    	<!-- PK fields -->
+		<column name="legalEntityId" primary="true" type="long" id-type="sequence" id-param="seq_legal_entity_id"/>
 		<!-- Group instance -->
-
 		<column name="groupId" type="long" />
-
 		<!-- Audit fields -->
-
 		<column name="companyId" type="long" />
 		<column name="userId" type="long" />
 		<column name="userName" type="String" />
 		<column name="createDate" type="Date" />
 		<column name="modifiedDate" type="Date" />
-
+        <column name="name" type="String"></column>
+		
+    </entity>
+	<entity local-service="true" name="Building" remote-service="true"
+		uuid="true" table="apm_building">
+		<!-- PK fields -->
+		<column name="buildingId" primary="true" type="long" id-type="sequence" id-param="seq_building_id"/>
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+		<!-- Audit fields -->
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
 		<!-- Other fields -->
-
-		<column name="field1" type="String" />
-		<column name="field2" type="boolean" />
-		<column name="field3" type="int" />
-		<column name="field4" type="Date" />
-		<column name="field5" type="String" />
-
+		<column name="name" type="String" />
+		<column name="name2" type="String" />
 		<!-- Order -->
-
+        <column name="legalEntityId" type="long"></column>
 		<order by="asc">
-			<order-column name="field1" />
+			<order-column name="name" />
 		</order>
-
 		<!-- Finder methods -->
-
-		<finder name="Field2" return-type="Collection">
-			<finder-column name="field2" />
+		<finder name="Name" return-type="Collection">
+			<finder-column name="name" />
 		</finder>
-
-		<!-- References -->
-
-		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
-		<reference entity="AssetTag" package-path="com.liferay.portlet.asset" />
 	</entity>
+	<entity local-service="true" name="Floor" remote-service="true"
+		uuid="true" table="apm_floor">
+		
+		<!-- PK fields -->
+		
+		<column name="floorId" primary="true" type="long" id-type="sequence" id-param="seq_floor_id"/>
+		
+		<!-- Group instance -->
+		
+		<column name="groupId" type="long" />
+		<!-- Audit fields -->
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		
+		<!-- Other fields -->
+		
+		<column name="name" type="String" />
+		
+		<!-- Order -->
+		
+        <column name="buildingId" type="long"></column>
+		<order by="asc">
+			<order-column name="name" />
+		</order>
+		
+		<!-- Finder methods -->
+		
+		<finder name="Name" return-type="Collection">
+			<finder-column name="name" />
+		</finder>
+	</entity>
+	<entity name="Room" local-service="true" remote-service="true"
+		uuid="true" table="apm_room">
+
+		<!-- PK fields -->
+
+		<column name="roomId" type="long" primary="true" id-type="sequence" id-param="seq_room_id"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="name" type="String"></column>
+        <column name="floorId" type="long"></column>
+        <column name="roomStatusId" type="long"></column>
+        <column name="roomTypeId" type="long"></column>
+	</entity>
+	<entity name="RoomStatus" local-service="true" remote-service="true"
+		uuid="true" table="apm_room_status">
+
+		<!-- PK fields -->
+
+		<column name="roomStatusId" type="long" primary="true" id-type="sequence" id-param="seq_room_status_id"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="code" type="String" localized="false"></column>
+        <column name="name" type="String"></column>
+	</entity>
+	<entity name="RoomType" local-service="true" remote-service="true"
+		uuid="true" table="apm_room_type">
+
+		<!-- PK fields -->
+
+		<column name="roomTypeId" type="long" primary="true" id-type="sequence" id-param="seq_room_type_id"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="name" type="String"></column>
+        <column name="description" type="String"></column>
+	</entity>
+    <entity name="RoomRate" local-service="true"></entity>
 </service-builder>
